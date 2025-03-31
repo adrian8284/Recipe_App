@@ -1,19 +1,26 @@
 <html>
 <head>
-    <title>Home Page - my blog</title>
+    <meta charset="UTF-8">
+    <title>Sign In - My Recipe Blog</title>
 </head>
 <body>
     <h1>Sign In</h1>
     <form action="" method="POST" novalidate>
-        {{form.hidden_tag()}}
-        <p> {{form.username.label}}</br>
-        {{form.username()}}</p>
-
-        <p>{{form.password.label}}</br>
-        <p>{{form.password()}}</p>
-
-        <p>{{form.submit()}}</p>
-        <p>{{form.remember_me()}}</p>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username() }}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password() }}
+        </p>
+        <p>
+            {{ form.remember_me() }}
+        </p>
+        <p>
+            {{ form.submit() }}
+        </p>
     </form>
 </body>
 </html>
