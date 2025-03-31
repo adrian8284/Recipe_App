@@ -17,6 +17,6 @@ db = SQLAlchemy(myapp_obj)
 # For user authentication using Flask-Login
 login_manager = LoginManager()
 login_manager.init_app(myapp_obj) # Initialize Flask-Login with App
-login_manager.login_view = 'main.login' # Set login view for unauthorized access, redirecting to main.login route
+login_manager.login_view = 'login' # Set login view for unauthorized access, redirecting to login route
 
 from app import routes, models
