@@ -1,0 +1,31 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>New Recipe - My Recipe Blog</title>
+</head>
+<body>
+    <h1>Add a New Recipe</h1>
+    <form method="POST" action="" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.title.label }}<br>
+            {{ form.title() }}
+        </p>
+        <p>
+            {{ form.description.label }}<br>
+            {{ form.description() }}
+        </p>
+        <p>
+            {{ form.ingredients.label }}<br>
+            {{ form.ingredients() }}
+        </p>
+        <p>
+            {{ form.instructions.label }}<br>
+            {{ form.instructions() }}
+        </p>
+        <p>
+            {{ form.submit() }}
+        </p>
+    </form>
+</body>
+</html>

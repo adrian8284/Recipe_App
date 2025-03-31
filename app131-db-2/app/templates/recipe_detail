@@ -1,0 +1,20 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ recipe.title }} - My Recipe Blog</title>
+</head>
+<body>
+    <h1>{{ recipe.title }}</h1>
+    <p><strong>Description:</strong> {{ recipe.description }}</p>
+    <p><strong>Ingredients:</strong> {{ recipe.ingredients }}</p>
+    <p><strong>Instructions:</strong> {{ recipe.instructions }}</p>
+    <p><strong>Added by:</strong> {{ recipe.author.username }}</p>
+    <p><strong>Created on:</strong> {{ recipe.created.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+    
+    {% if current_user.is_authenticated and recipe.author == current_user %}
+    <form method="POST" action="{{ url_for('delete_recipe', recipe_id=recipe.id) }}">
+        <input type="submit" value="Delete Recipe">
+    </form>
+    {% endif %}
+</body>
+</html>
