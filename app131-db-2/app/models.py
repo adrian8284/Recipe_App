@@ -1,6 +1,6 @@
 from app import db
 from flask_login import UserMixin
-from datetime import datetime
+from datetime import datetime, timezone
 from app import login_manager
 
 # Updated User model with constraints, and added relationship to Recipe
@@ -23,5 +23,5 @@ class Recipe(db.Model):
     description = db.Column(db.Text, nullable=False)
     ingredients = db.Column(db.Text, nullable=False)
     instructions = db.Column(db.Text, nullable=False)
-    created = db.Column(db.DateTime, default=datetime.timezone.utc)
+    created = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)

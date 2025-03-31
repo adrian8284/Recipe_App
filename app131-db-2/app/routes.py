@@ -11,7 +11,7 @@ from werkzeug.security import check_password_hash # Added for added security ver
 @myapp_obj.route("/recipes")
 def home():
     recipes = Recipe.query.all()
-    return render_template("index.html", recipes=recipes)
+    return render_template("home.html", recipes=recipes)
 
 # New Recipe Page (requires login)
 @myapp_obj.route("/recipe/new", methods=["GET", "POST"])

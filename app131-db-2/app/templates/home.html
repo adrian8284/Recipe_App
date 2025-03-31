@@ -4,6 +4,12 @@
     <title>Home Page - My Recipe Blog</title>
 </head>
 <body>
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a> |
+        <a href="{{ url_for('login') }}">Login</a> |
+        <a href="{{ url_for('new_recipe') }}">New Recipe</a> |
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </nav>
     <h1>All Recipes</h1>
     <ul>
         {% for recipe in recipes %}
